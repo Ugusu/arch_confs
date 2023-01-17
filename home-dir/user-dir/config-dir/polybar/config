@@ -39,9 +39,10 @@ format-offset =
 
 [colors]
 ; Nord theme ============
-background = #2F343F
+background = #AA2F343F
 foreground = #f3f4f5
-foreground-active = #6790EB
+#foreground-active = #6790EB
+foreground-active = #D71EE8
 occupied = #cccccc
 occupied-active = #b3c7f5
 active = #5e81ac
@@ -303,12 +304,14 @@ enable-ipc = true
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=10;0"
+font-1 = "Font Awesome v4 Compatibility:size=10;0"
 font-2 = "Noto Sans:size=10;0"
 font-3 = "Noto Sans Mono:size=10;0"
+font-4 = "Font Awesome 6 Free:size=10;0"
+font-5 = "Font Awesome 6 Free Solid:size=10;0"
 
 modules-left = ewmh
-modules-center = 
+modules-center =
 modules-right = xkeyboard memory2 cpu2 date
 #modules-right = xkeyboard memory2 cpu2 battery date
 
@@ -1998,7 +2001,7 @@ type = internal/cpu
 interval = 1
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "  "
+format-prefix = " " 
 format-prefix-foreground = #cd1f3f
 format-underline = #cd1f3f
 
@@ -2066,33 +2069,39 @@ enable-click = true
 enable-scroll = true
 reverse-scroll = true
 
-icon-0 = 1;
-icon-1 = 2;
-icon-2 = 3;
-icon-3 = 4;
-icon-4 = 5;
+icon-0 = ;
+icon-1 = ;
+icon-2 = ;
+icon-3 = ;
+icon-4 = ;
+#icon-0 = 1;
+#icon-1 = 2;
+#icon-2 = 3;
+#icon-3 = 4;
+#icon-4 = 5;
 #icon-5 = 6;
 format = <label-state>
-label-monitor = %name%
+label-monitor = 
 
-label-active = %name%
+label-active = 
+#label-active = %name%
 label-active-foreground = ${colors.foreground-active}
 label-active-background = ${colors.background}
-label-active-underline= #6790eb
+label-active-underline= ${colors.foreground-active}
 label-active-padding = 2
 
-label-occupied = %name%
+label-occupied = 
 label-occupied-foreground = ${colors.occupied-active}
 label-occupied-background = ${colors.background}
 label-occupied-padding = 2
 
-label-urgent = %name%
+label-urgent = 
 label-urgent-foreground = ${colors.foreground}
 label-urgent-background = ${colors.alert}
 label-urgent-underline = ${colors.alert}
 label-urgent-padding = 2
 
-label-empty = %name%
+label-empty = 
 label-empty-foreground = ${colors.foreground}
 label-empty-padding = 2
 format-foreground = ${colors.foreground}
@@ -2284,7 +2293,7 @@ interval = 1
 label = %percentage_used%%
 
 format = Mem <label>
-format-prefix = "  "
+format-prefix = " "
 format-prefix-foreground = #3384d0
 format-underline = #3384d0
 format-foreground = ${colors.foreground}
@@ -2749,8 +2758,8 @@ format-background = ${colors.background}
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+format-prefix = "⌨ " 
+format-prefix-foreground = #3ecfb2
 format-prefix-background = ${colors.background}
 format-prefix-underline = #3ecfb2
 format-foreground = ${colors.foreground}
@@ -2791,12 +2800,24 @@ reverse-scroll = true
 
 ###############################################################################
 
+; [module/polywins]
+; type = custom/script
+; exec = ~/.config/polybar/scripts/polywins.sh 2>/dev/null
+; format = <label>
+; label = %output%
+; label-padding = 1
+; tail = true
 
-icon-0 = 1;
-icon-1 = 2;
-icon-2 = 3;
-icon-3 = 4;
-icon-4 = 5;
+icon-0 = ;
+icon-1 = ;
+icon-2 = ;
+icon-3 = ;
+icon-4 = ;
+#icon-0 = 1;
+#icon-1 = 2;
+#icon-2 = 3;
+#icon-3 = 4;
+#icon-4 = 5;
 #icon-5 = 6;
 format = <label-state>
 label-monitor = %name%
