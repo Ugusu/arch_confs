@@ -2,6 +2,14 @@ delay=1
 region=1
 action=1
 show_mouse=0
-title=ArcoLinux
+title=SCREENSHOT
 timestamp=TRUE
-app=nomacs
+app=feh
+custom_action_command=none
+last_user=
+last_extension=png
+screenshot_dir=file:/home/ugusu/Pictures
+enable_imgur_upload=true
+show_in_folder=false
+show_border=1
+
